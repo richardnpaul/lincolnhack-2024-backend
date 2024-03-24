@@ -1,0 +1,35 @@
+{% extends "content.html" %}
+
+{% block content %}
+<div class="background">
+    <div class="card floating-button results">
+        <div class="title">
+            Results
+        </div>
+        <div class="divider-container">
+            <div class="divider"></div>
+        </div>
+
+        <div class="section">
+            Based on your performance and answers to the previous assessment, the {# Variable for the particular
+            questionaire publishing body EG. Dyslexia Association UK #}
+            assessment indicates {{ result }}.
+        </div>
+        <div class="body">
+            <div class="title">
+                {# variable for particular assessment type EG. Dyslexia #} Questionaire Results
+            </div>
+
+            <div class="divider-container">
+                <div class="divider"></div>
+            </div>
+
+
+            <div class="section">
+                The {# Variable for the particular questionaire publishing body EG. Dyslexia Association UK #} assessment
+                results are determined by completing a standardised questionnaire.
+                Based on your responses to the assessment, this questionnaire provides:
+            </div>
+        </div>
+    </div>
+{% endblock %}

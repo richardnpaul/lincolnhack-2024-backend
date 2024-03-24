@@ -1,0 +1,19 @@
+{% extends "content.html" %}
+
+{% block content %}
+    <div class="background">
+        <div class="card floating-button results">
+            <form action="/scoring/" method="post">{% csrf_token %}
+                {% for question_key, question_value in questions.items %}
+                <label for="{{ question_key }}">{{ question_key }}: {{ question_value.questiontext }}</label>
+                <select id="{{ question_key }}" name="question_key">
+                    {% for option_key, option_value in question_value.options.items %}
+                        <option value="{{ option_value }}">{{ option_key }}</option>
+                    {% endfor %}
+                </select>
+                {% endfor %}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+{% endblock %}
