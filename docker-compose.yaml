@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.local
+    depends_on:
+      - db
+    image: stripes_with_pride/django
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/app/
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=stripes_with_pride
+      - POSTGRES_USER=stripes_with_pride
+      - POSTGRES_PASSWORD=1MkKw3L3GJFsswVN2ADqRQqGWX6IgawuiKmTJyYAkY4R2g1ujN
+
+volumes:
+  postgres_data:

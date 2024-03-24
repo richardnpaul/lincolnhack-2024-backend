@@ -1,6 +1,16 @@
 {% load static %}
-<!DOCTYPE html>
+<!DOCTYPE html lang="en">
 <head>
     <title>{{ title }}</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
 </head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
 </html>
