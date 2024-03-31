@@ -161,3 +161,4 @@ cython_debug/
 #.idea/
 
 static/
+!stripes_with_pride/api/static/

@@ -5,12 +5,12 @@
         <div class="card floating-button results">
             <form action="/scoring/" method="post">{% csrf_token %}
                 {% for question_key, question_value in questions.items %}
-                <label for="{{ question_key }}">{{ question_key }}: {{ question_value.questiontext }}</label>
+                <label for="{{ question_key }}">{{ question_key }}: {{ question_value.questiontext }}</label><br />
                 <select id="{{ question_key }}" name="question_key">
                     {% for option_key, option_value in question_value.options.items %}
                         <option value="{{ option_value }}">{{ option_key }}</option>
                     {% endfor %}
-                </select>
+                </select><br />
                 {% endfor %}
                 <input type="submit" value="Submit">
             </form>
